@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 
+console.log('commit time');
 
 var app = express();
 
