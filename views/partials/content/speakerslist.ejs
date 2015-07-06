@@ -1,0 +1,32 @@
+<article class="speakerslist">
+    <section class="layout">
+        <div class="speakers">
+            <%console.log(page)%>
+            <% artists.forEach(function(item){%>
+                <ul>
+                    <a href="/speakers/<%=item.shortname%>">
+                    <li><%= item.title %></li>
+                    <li><img src="/images/speakers/<%= item.shortname %>_tn.jpg"</li>
+                    <li><%= item.name %></li>
+                    </a>
+                    <%if(page == "artistList" || page== 'home'){%>
+                    <li><%- item.summary %></li>
+                    <%}%>
+                    <%if(page == 'artistDetail'){%>
+                    <li><%- item.description %></li>
+                    <%}%>
+
+                </ul>
+            <%});%>
+
+            <% for(var i = 0; i < artists.length; ++i) { %>
+            <% for(var attr in artists[i]){%>
+            <p><%= attr %> : <%- artists[i][attr] %></p>
+            <%}%>
+
+            <% } %>
+
+        </div>
+    </section>
+  
+</article>
